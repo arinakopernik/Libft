@@ -1,3 +1,5 @@
+![libft](https://user-images.githubusercontent.com/103765789/168682988-b193a664-22e7-4751-ad12-620adca7d073.JPG)
+
 ## Libft
 Libft is the very first individual project at School21. It's goal is to recode a few functioins from C standart library and some extra functions. It's goal is to create a library that we'll be able to use in our future projects as we are not allowed to use standart libraries. Also. it helps us to understand the basic algorithms.
 ## Functions
