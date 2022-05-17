@@ -5,16 +5,16 @@ Libft is the very first individual project at School21. It's goal is to recode a
 ## Functions
 | Mandatory | Additional | Bonus |
 |---|---|---|
-|[ft_atoi](#ft_atoi)|[ft_itoa](#ft_itoa) | ft_lstadd_back
-|[ft_bzero](#ft_bzero) | [ft_putchar_fd](#ft_putchar_fd) |ft_lstadd_front
-|[ft_calloc](#ft_calloc) | [ft_putendl_fd](#ft_putendl_fd) | ft_lstclear
-|[ft_isalnum](#ft_isalnum) | [ft_putnbr_fd](#ft_putnbr_fd) | ft_lstdelone
-|[ft_isalpha](#ft_isalpha) | [ft_putstr_fd](#ft_putstr_fd) | ft_lstiter
-|[ft_isascii](#ft_isascii) |[ft_split](#ft_split)| ft_lstlast
-|[ft_isdigit](#ft_isdigit) | [ft_striteri](#ft_striteri) |ft_lstmap
-|[ft_isprint](#ft_isprint) | [ft_strjoin](#ft_strjoin) |ft_lstnew
-|[ft_memchr](#ft_memchr) | [ft_strmapi](#ft_strmapi) | ft_lstsize
-|[ft_memcmp](#ft_memcmp) | [ft_strtrim](#ft_strtrim) | 
+|[ft_atoi](#ft_atoi)|[ft_itoa](#ft_itoa) | [ft_lstadd_back](#ft_lstadd_back)
+|[ft_bzero](#ft_bzero) | [ft_putchar_fd](#ft_putchar_fd) |[ft_lstadd_front](#ft_lstadd_front)
+|[ft_calloc](#ft_calloc) | [ft_putendl_fd](#ft_putendl_fd) | [ft_lstclear](#ft_lstclear)
+|[ft_isalnum](#ft_isalnum) | [ft_putnbr_fd](#ft_putnbr_fd) | [ft_lstdelone](#ft_lstdelone)
+|[ft_isalpha](#ft_isalpha) | [ft_putstr_fd](#ft_putstr_fd) | [ft_lstiter](#ft_lstiter)
+|[ft_isascii](#ft_isascii) |[ft_split](#ft_split)| [ft_lstlast](#ft_lstlast)
+|[ft_isdigit](#ft_isdigit) | [ft_striteri](#ft_striteri) |[ft_lstmap](#ft_lstmap)
+|[ft_isprint](#ft_isprint) | [ft_strjoin](#ft_strjoin) |[ft_lstnew](#ft_lstnew)
+|[ft_memchr](#ft_memchr) | [ft_strmapi](#ft_strmapi) | [ft_lstsize](#ft_lstsize)
+|[ft_memcmp](#ft_memcmp) | [ft_strtrim](#ft_strtrim) 
 |[ft_memcpy](#ft_memcpy) | [ft_substr](#ft_substr)
 |[ft_memmove](#ft_memmove) 
 |[ft_memset](#ft_memset) 
@@ -274,3 +274,67 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 |Allocates and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’|*s* - The string from which to create the substring; *start* - The start index of the substring in the
 string ’s’; *len* - The maximum length of the substring|The substring.
 NULL if the allocation fails|
+### Bonus
+#### ft_lstadd_back
+```
+void ft_lstadd_back(t_list **lst, t_list *new);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Adds the node ’new’ at the end of the list.|*lst* - The address of a pointer to the first link of a list; *new* - The address of a pointer to the node to be added to the list|---|
+#### ft_lstadd_front
+```
+void ft_lstadd_front(t_list **lst, t_list *new);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Adds the node ’new’ at the beginning of the list.|*lst* - The address of a pointer to the first link of a list; *new* - The address of a pointer to the node to be added to the list|---|
+#### ft_lstclear
+```
+void ft_lstclear(t_list **lst, void (*del)(void*));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Deletes and frees the given node and every successor of that node, using the function ’del’ and free. Finally, the pointer to the list must be set to NULL|*lst* - The address of a pointer to a node; *del* - The address of the function used to delete the content of the node|---|
+#### ft_lstdelone
+```
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Takes as a parameter a node and frees the memory of the node’s content using the function ’del’ given as a parameter and free the node. The memory of ’next’ must not be freed|*lst* - The node to free; *del* - The address of the function used to delete the content|---|
+#### ft_lstiter
+```
+void ft_lstiter(t_list *lst, void (*f)(void *));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Iterates the list ’lst’ and applies the function ’f’ on the content of each node|*lst* - The address of a pointer to a node; *f* - The address of the function used to iterate on the list|---|
+#### ft_lstlast
+```
+t_list *ft_lstlast(t_list *lst);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Returns the last node of the list|*lst* - The beginning of the list|Last node of the list|
+#### ft_lstmap
+```
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Iterates the list ’lst’ and applies the function ’f’ on the content of each node. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of a node if needed|*lst* - The address of a pointer to a node; *f* - The address of the function used to iterate on the list; *del* - The address of the function used to delete the content of a node if needed|The new list. NULL if the allocation fails|
+#### ft_lstnew
+```
+t_list *ft_lstnew(void *content);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns a new node. The member variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL| *content* - The content to create the node with.| The new node|
+#### ft_lstsize
+```
+int ft_lstsize(t_list *lst);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Counts the number of nodes in a list|*lst* - The beginning of the list|The length of the list|
