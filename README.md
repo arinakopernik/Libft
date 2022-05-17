@@ -194,7 +194,6 @@ int tolower ( int c );
 |---|---|---|
 |Convert lowercase letter to uppercase | *c* - a character to be converted |The uppercase equivalent to c|
 ### Additional
-### Mandatory
 #### ft_itoa
 ```
 char *ft_itoa(int n);
