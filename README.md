@@ -5,20 +5,19 @@ Libft is the very first individual project at School21. It's goal is to recode a
 ## Functions
 | Mandatory | Additional | Bonus |
 |---|---|---|
-|[ft_atoi](#ft_atoi)|ft_itoa | ft_lstadd_back
-|[ft_bzero](#ft_bzero) | ft_putchar_fd |ft_lstadd_front
-|[ft_calloc](#ft_calloc) | ft_putendl_fd | ft_lstclear
-|[ft_isalnum](#ft_isalnum) | ft_putnbr_fd | ft_lstdelone
-|[ft_isalpha](#ft_isalpha) | ft_putstr_fd | ft_lstiter
-|[ft_isascii](#ft_isascii) | ft_split | ft_lstlast
-|[ft_isdigit](#ft_isdigit) | ft_striteri |ft_lstmap
-|[ft_isprint](#ft_isprint) | ft_strjoin |ft_lstnew
-|[ft_memchr](#ft_memchr) | ft_strmapi | ft_lstsize
-|[ft_memcmp](#ft_memcmp) | ft_strtrim | 
-|[ft_memcpy](#ft_memcpy) | ft_substr
+|[ft_atoi](#ft_atoi)|[ft_itoa](#ft_itoa) | ft_lstadd_back
+|[ft_bzero](#ft_bzero) | [ft_putchar_fd](#ft_putchar_fd) |ft_lstadd_front
+|[ft_calloc](#ft_calloc) | [ft_putendl_fd](#ft_putendl_fd) | ft_lstclear
+|[ft_isalnum](#ft_isalnum) | [ft_putnbr_fd](#ft_putnbr_fd) | ft_lstdelone
+|[ft_isalpha](#ft_isalpha) | [ft_putstr_fd](#ft_putstr_fd) | ft_lstiter
+|[ft_isascii](#ft_isascii) |[ft_split](#ft_split)| ft_lstlast
+|[ft_isdigit](#ft_isdigit) | [ft_striteri](#ft_striteri) |ft_lstmap
+|[ft_isprint](#ft_isprint) | [ft_strjoin](#ft_strjoin) |ft_lstnew
+|[ft_memchr](#ft_memchr) | [ft_strmapi](#ft_strmapi) | ft_lstsize
+|[ft_memcmp](#ft_memcmp) | [ft_strtrim](#ft_strtrim) | 
+|[ft_memcpy](#ft_memcpy) | [ft_substr](#ft_substr)
 |[ft_memmove](#ft_memmove) 
 |[ft_memset](#ft_memset) 
-|[ft_split](#ft_split)
 |[ft_strchr](#ft_strchr)
 |[ft_strdup](#ft_strdup)
 |[ft_strlcat](#ft_strlcat)
@@ -124,13 +123,6 @@ void	*ft_memset(void *b, int c, size_t len);
 |Description | Parameters | Return Value|
 |---|---|---|
 |Fill block of memory| *b* - where to set *len* bytes to *c* value|b|
-#### ft_split
-```
-char	**ft_split(char const *s, char c);
-```
-|Description | Parameters | Return Value|
-|---|---|---|
-|Returns an array of strings splitting *s* using the character *c* as a delimiter. | *s* - pointer to a string to be splitted; *c* - delimiter|An array of strings|
 #### ft_strchr
 ```
 char	*ft_strchr(const char *s, int c);
@@ -201,3 +193,84 @@ int tolower ( int c );
 |Description | Parameters | Return Value|
 |---|---|---|
 |Convert lowercase letter to uppercase | *c* - a character to be converted |The uppercase equivalent to c|
+### Additional
+### Mandatory
+#### ft_itoa
+```
+char *ft_itoa(int n);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns a string representing the integer received as an argument. |*n* - the integer to convert.|The string representing the integer. NULL if the allocation fails.|
+#### ft_putchar_fd
+```
+void ft_putchar_fd(char c, int fd);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Outputs the character ’c’ to the given file descriptor |*c* - The character to output;*fd* - The file descriptor on which to write.|---|
+#### ft_putendl_fd
+```
+void ft_putendl_fd(char *s, int fd);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Outputs the string ’s’ to the given file descriptor followed by a newline.|*s* -  The string to output; *fd* - The file descriptor on which to write|---|
+#### ft_putnbr_fd
+```
+void ft_putnbr_fd(int n, int fd);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Outputs the integer ’n’ to the given file descriptor|*n* -  The integer to output. *fd* - The file descriptor on which to write.|---|
+#### ft_putstr_fd
+```
+void ft_putstr_fd(char *s, int fd);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Outputs the string ’s’ to the given file descriptor.|*s* - The string to output. *fd* -The file descriptor on which to write|---|
+#### ft_split
+```
+char **ft_split(char const *s, char c);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must end with a NULL pointer|*s* - The string to be split; *c* -  The delimiter character|The array of new strings resulting from the split.NULL if the allocation fails|
+#### ft_striteri
+```
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Applies the function ’f’ on each character of the string passed as argument, passing its index as first argument. Each character is passed by address to ’f’ to be modified if necessary.|*s* - The string on which to iterate; *f* - The function to apply to each character. |---|
+#### ft_strjoin
+```
+char *ft_strjoin(char const *s1, char const *s2);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’|*s1* - The prefix string; *s2* -  The suffix string.|The new string. NULL if the allocation fails.|
+#### ft_strmapi
+```
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Applies the function ’f’ to each character of the string ’s’, and passing its index as first argument to create a new string resulting from successive applications of ’f’|*s* - The string on which to iterate; *f* -The function to apply to each character|The string created from the successive applications of ’f’. Returns NULL if the allocation fails|
+#### ft_strtrim
+```
+char *ft_strtrim(char const *s1, char const *set);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns a copy of ’s1’ with the characters specified in ’set’ removed from the beginning and the end of the string|*s1* - The string to be trimmed; *set* - The reference set of characters to trim|The trimmed string. NULL if the allocation fails|
+#### ft_substr
+```
+char *ft_substr(char const *s, unsigned int start, size_t len);
+```
+|Description | Parameters | Return Value|
+|---|---|---|
+|Allocates and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’|*s* - The string from which to create the substring; *start* - The start index of the substring in the
+string ’s’; *len* - The maximum length of the substring|The substring.
+NULL if the allocation fails|
