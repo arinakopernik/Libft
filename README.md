@@ -56,14 +56,14 @@ void* calloc (size_t num, size_t size);
 |Allocates a block of memory for an array of *num* elements, each of them *size* bytes long, and initializes all its bits to zero. | *num* - number of elements; *size* - size of bytes | A pointer to the memory block allocated by the function.|
 #### ft_isalnum
 ```
-int isalnum ( int c );
+int ft_isalnum ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
 |Checks whether *c* is either a decimal digit or an uppercase or lowercase letter. | *c* - a value to be checked |True - a value different from 0; False - 0|
 #### ft_isalpha
 ```
-int isalpha ( int c );
+int ft_isalpha ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
@@ -74,17 +74,17 @@ int	ft_isascii(int c);
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
-|Checks if character is an ASCII charachter | *c* - a value to be checked |True - a value different from 0; False - 0|
+|Checks if character is an ASCII character | *c* - a value to be checked |True - a value different from 0; False - 0|
 #### ft_isdigit
 ```
-int isdigit ( int c );
+int ft_isdigit ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
 |Checks if character is decimal digit | *c* - a value to be checked |True - a value different from 0; False - 0|
 #### ft_isprint
 ```
-int isprint ( int c );
+int ft_isprint ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
@@ -95,7 +95,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
-|Locate character in block of memory | *s* - pointer to a block of memory; *c* - charachter searched in s; *n* - number of bytes |A pointer to the first occurrence of *c* in the block of memory pointed by *s*; Else - NULL-pointer|
+|Locate character in block of memory | *s* - pointer to a block of memory; *c* - character searched in s; *n* - number of bytes |A pointer to the first occurrence of *c* in the block of memory pointed by *s*; Else - NULL-pointer|
 #### ft_memcmp
 ```
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -182,7 +182,7 @@ char	*ft_strnstr(const char *s1, const char	*s2, size_t	n);
 |Locates substring| *s1* - pointer to a first string *s2* - pointer to a second string; *n* - number of bytes to search for|A pointer to the first character of the first occurrence of little is returned. NULL if the substring is not found. If *s2* is an empty string, *s1* is returned|
 #### ft_strrchr
 ```
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c);
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
@@ -193,11 +193,11 @@ int tolower ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
-|Convert uppercase letter to lowercase | *c* - a charachter to be converted |The lowercase equivalent to c|
+|Convert uppercase letter to lowercase | *c* - a character to be converted |The lowercase equivalent to c|
 #### ft_toupper
 ```
 int tolower ( int c );
 ```
 |Description | Parameters | Return Value|
 |---|---|---|
-|Convert lowercase letter to uppercase | *c* - a charachter to be converted |The uppercase equivalent to c|
+|Convert lowercase letter to uppercase | *c* - a character to be converted |The uppercase equivalent to c|
